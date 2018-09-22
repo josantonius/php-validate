@@ -25,7 +25,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function array($data, $default = null)
+    public static function asArray($data, $default = null)
     {
         $json = is_string($data) ? $data : json_encode($data);
 
@@ -44,7 +44,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function object($data, $default = null)
+    public static function asObject($data, $default = null)
     {
         $json = is_string($data) ? $data : json_encode($data);
 
@@ -61,7 +61,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function json($data, $default = null)
+    public static function asJson($data, $default = null)
     {
         $json = is_string($data) ? $data : json_encode($data);
 
@@ -76,7 +76,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function string($data, $default = null)
+    public static function asString($data, $default = null)
     {
         $string = filter_var(
             $data ?? [],
@@ -95,7 +95,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function integer($data, $default = null)
+    public static function asInteger($data, $default = null)
     {
         $int = filter_var($data ?? '', FILTER_VALIDATE_INT);
 
@@ -110,7 +110,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function float($data, $default = null)
+    public static function asFloat($data, $default = null)
     {
         $float = filter_var($data ?? '', FILTER_VALIDATE_FLOAT);
 
@@ -125,7 +125,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function boolean($data, $default = null)
+    public static function asBoolean($data, $default = null)
     {
         $boolean = filter_var($data ?? [], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
 
@@ -140,7 +140,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function ip($data, $default = null)
+    public static function asIp($data, $default = null)
     {
         $isValid = filter_var($data ?? '', FILTER_VALIDATE_IP);
 
@@ -155,7 +155,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function url($data, $default = null)
+    public static function asUrl($data, $default = null)
     {
         $url = filter_var($data ?? '', FILTER_SANITIZE_URL);
 
@@ -170,7 +170,7 @@ class Validate
      *
      * @return mixed → value, null or customized return value
      */
-    public static function email($data, $default = null)
+    public static function asEmail($data, $default = null)
     {
         $isValid = filter_var($data ?? '', FILTER_VALIDATE_EMAIL);
 

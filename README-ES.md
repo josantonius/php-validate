@@ -55,7 +55,7 @@ Métodos disponibles en esta biblioteca:
 ### - Devolución de parámetros como array:
 
 ```php
-Validate::array($data, $default);
+Validate::asArray($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -68,7 +68,7 @@ Validate::array($data, $default);
 ### - Devolución de parámetros como object:
 
 ```php
-Validate::object($data, $default);
+Validate::asObject($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -81,7 +81,7 @@ Validate::object($data, $default);
 ### - Devolución de parámetros como JSON:
 
 ```php
-Validate::json($data, $default);
+Validate::asJson($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -94,7 +94,7 @@ Validate::json($data, $default);
 ### - Devolución de parámetros como string:
 
 ```php
-Validate::string($data, $default);
+Validate::asString($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -107,7 +107,7 @@ Validate::string($data, $default);
 ### - Devolución de parámetros como integer:
 
 ```php
-Validate::integer($data, $default);
+Validate::asInteger($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -120,7 +120,7 @@ Validate::integer($data, $default);
 ### - Devolución de parámetros como float:
 
 ```php
-Validate::float($data, $default);
+Validate::asFloat($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -133,7 +133,7 @@ Validate::float($data, $default);
 ### - Devolución de parámetros como boolean:
 
 ```php
-Validate::boolean($data, $default);
+Validate::asBoolean($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -146,7 +146,7 @@ Validate::boolean($data, $default);
 ### - Devolución de parámetros como IP:
 
 ```php
-Validate::ip($data, $default);
+Validate::asIp($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -159,7 +159,7 @@ Validate::ip($data, $default);
 ### - Devolución de parámetros como URL:
 
 ```php
-Validate::url($data, $default);
+Validate::asUrl($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -172,7 +172,7 @@ Validate::url($data, $default);
 ### - Devolución de parámetros como URL:
 
 ```php
-Validate::email($data, $default);
+Validate::asEmail($data, $default);
 ```
 
 | Atributo | Descripción | Tipo | Requerido | Valor por defecto
@@ -209,13 +209,13 @@ Ejemplo de uso para esta biblioteca:
 #### - Cuando un array es pasado:
 
 ```php
-var_dump(Validate::array(['foo', 'bar'])); // ['foo', 'bar']
+var_dump(Validate::asArray(['foo', 'bar'])); // ['foo', 'bar']
 ```
 
 #### - Cuando un array JSON es pasado:
 
 ```php
-var_dump(Validate::array('["foo", "bar"]')); // ['foo', 'bar']
+var_dump(Validate::asArray('["foo", "bar"]')); // ['foo', 'bar']
 ```
 
 #### - Cuando un objeto es pasado:
@@ -225,21 +225,21 @@ $data = new \StdClass;
 
 $data->foo = 'bar';
 
-var_dump(Validate::array($data)); // ['foo' => 'bar']
+var_dump(Validate::asArray($data)); // ['foo' => 'bar']
 ```
 
 #### - Cuando un objeto JSON es pasado:
 
 ```php
-var_dump(Validate::array('{"foo": "bar"}')); // ['foo' => 'bar']
+var_dump(Validate::asArray('{"foo": "bar"}')); // ['foo' => 'bar']
 ```
 
 #### - Cuando no se pasa un array correcto:
 
 ```php
-var_dump(Validate::array(false)); // null
+var_dump(Validate::asArray(false)); // null
 
-var_dump(Validate::array(false, ['foo', 'bar'])); // ['foo', 'bar']
+var_dump(Validate::asArray(false, ['foo', 'bar'])); // ['foo', 'bar']
 ```
 
 ### - OBJECT:
@@ -251,7 +251,7 @@ $data = new \StdClass;
 
 $data->foo = 'bar';
 
-$object = Validate::object($data);
+$object = Validate::asObject($data);
 
 echo $object->foo; // 'bar'
 ```
@@ -259,7 +259,7 @@ echo $object->foo; // 'bar'
 #### - Cuando un objeto JSON es pasado:
 
 ```php
-$object = Validate::object('{"foo": "bar"}');
+$object = Validate::asObject('{"foo": "bar"}');
 
 echo $object->foo; // 'bar'
 ```
@@ -267,7 +267,7 @@ echo $object->foo; // 'bar'
 #### - Cuando un array es pasado:
 
 ```php
-$object = Validate::object(['foo' => 'bar']));
+$object = Validate::asObject(['foo' => 'bar']));
 
 echo $object->foo; // 'bar'
 ```
@@ -275,9 +275,9 @@ echo $object->foo; // 'bar'
 #### - Cuando no se pasa un objeto correcto:
 
 ```php
-var_dump(Validate::object(false)); // null
+var_dump(Validate::asObject(false)); // null
 
-$object = Validate::object(false, ['foo' => 'bar']);
+$object = Validate::asObject(false, ['foo' => 'bar']);
 
 echo $object->foo; // 'bar'
 ```
@@ -287,13 +287,13 @@ echo $object->foo; // 'bar'
 #### - Cuando un objeto JSON es pasado:
 
 ```php
-echo Validate::json('{"foo": "bar"}'); // '{"foo": "bar"}'
+echo Validate::asJson('{"foo": "bar"}'); // '{"foo": "bar"}'
 ```
 
 #### - Cuando un array es pasado:
 
 ```php
-echo Validate::json(['foo' => 'bar']); // '{"foo":"bar"}'
+echo Validate::asJson(['foo' => 'bar']); // '{"foo":"bar"}'
 ```
 
 #### - Cuando un objeto es pasado:
@@ -303,15 +303,15 @@ $data = new \StdClass;
 
 $data->foo = 'bar';
 
-echo Validate::json($data); // '{"foo":"bar"}'
+echo Validate::asJson($data); // '{"foo":"bar"}'
 ```
 
 #### - Cuando no se pasa un JSON correcto:
 
 ```php
-var_dump(Validate::json(false)); // null
+var_dump(Validate::asJson(false)); // null
 
-echo Validate::json(false, '["foo", "bar"]'); // '["foo", "bar"]'
+echo Validate::asJson(false, '["foo", "bar"]'); // '["foo", "bar"]'
 ```
 
 ### - STRING:
@@ -319,21 +319,21 @@ echo Validate::json(false, '["foo", "bar"]'); // '["foo", "bar"]'
 #### - Cuando un string es pasado:
 
 ```php
-echo Validate::string('foo'); // 'foo'
+echo Validate::asString('foo'); // 'foo'
 ```
 
 #### - When an integer is passed:
 
 ```php
-echo Validate::string(221104); // '221104'
+echo Validate::asString(221104); // '221104'
 ```
 
 #### - Cuando no se pasa un string correcto:
 
 ```php
-var_dump(Validate::string(false)); // null
+var_dump(Validate::asString(false)); // null
 
-echo Validate::string(false, 'foo'); // 'foo'
+echo Validate::asString(false, 'foo'); // 'foo'
 ```
 
 ### - INTEGER:
@@ -341,21 +341,21 @@ echo Validate::string(false, 'foo'); // 'foo'
 #### - When an integer is passed:
 
 ```php
-echo Validate::integer(8); // 8
+echo Validate::asInteger(8); // 8
 ```
 
 #### - Cuando un string es pasado:
 
 ```php
-echo Validate::integer('8'); // 8
+echo Validate::asInteger('8'); // 8
 ```
 
 #### - Cuando no se pasa un integer correcto:
 
 ```php
-var_dump(Validate::integer(false)); // null
+var_dump(Validate::asInteger(false)); // null
 
-echo Validate::integer(false, 8); // 8
+echo Validate::asInteger(false, 8); // 8
 ```
 
 ### - FLOAT:
@@ -363,21 +363,21 @@ echo Validate::integer(false, 8); // 8
 #### - When an float is passed:
 
 ```php
-echo Validate::float(8.8); // 8.8
+echo Validate::asFloat(8.8); // 8.8
 ```
 
 #### - Cuando un string es pasado:
 
 ```php
-echo Validate::float('8.8'); // 8.8
+echo Validate::asFloat('8.8'); // 8.8
 ```
 
 #### - Cuando no se pasa un float correcto:
 
 ```php
-var_dump(Validate::float(false)); // null
+var_dump(Validate::asFloat(false)); // null
 
-echo Validate::float(false, 8.8); // 8.8
+echo Validate::asFloat(false, 8.8); // 8.8
 ```
 
 ### - BOOLEAN:
@@ -385,57 +385,57 @@ echo Validate::float(false, 8.8); // 8.8
 #### - Cuando un booleano true es pasado:
 
 ```php
-var_dump(Validate::boolean(true)); // true
+var_dump(Validate::asBoolean(true)); // true
 ```
 
 #### - Cuando un string true es pasado:
 
 ```php
-var_dump(Validate::boolean('true')); // true
+var_dump(Validate::asBoolean('true')); // true
 ```
 
 #### - Cuando un integer 1 es pasado:
 
 ```php
-var_dump(Validate::boolean(1)); // true
+var_dump(Validate::asBoolean(1)); // true
 ```
 
 #### - Cuando un string 1 es pasado:
 
 ```php
-var_dump(Validate::boolean('1')); // true
+var_dump(Validate::asBoolean('1')); // true
 ```
 
 #### - Cuando un booleano false es pasado:
 
 ```php
-var_dump(Validate::boolean(false)); // false
+var_dump(Validate::asBoolean(false)); // false
 ```
 
 #### - Cuando un string false es pasado:
 
 ```php
-var_dump(Validate::boolean('false')); // false
+var_dump(Validate::asBoolean('false')); // false
 ```
 
 #### Cuando un integer 0 es pasado:
 
 ```php
-var_dump(Validate::boolean(0)); // false
+var_dump(Validate::asBoolean(0)); // false
 ```
 
 #### - Cuando un string 0 es pasado:
 
 ```php
-var_dump(Validate::boolean('0')); // false
+var_dump(Validate::asBoolean('0')); // false
 ```
 
 #### - Cuando no se pasa un booleano correcto:
 
 ```php
-var_dump(Validate::boolean(null)); // null
+var_dump(Validate::asBoolean(null)); // null
 
-echo Validate::boolean(null, true); // true
+echo Validate::asBoolean(null, true); // true
 ```
 
 ### - IP:
@@ -443,15 +443,15 @@ echo Validate::boolean(null, true); // true
 #### - Cuando una IP es pasada:
 
 ```php
-echo Validate::ip('255.255.255.0'); // '255.255.255.0'
+echo Validate::asIp('255.255.255.0'); // '255.255.255.0'
 ```
 
 #### - Cuando no se pasa una IP correcta:
 
 ```php
-var_dump(Validate::ip(null)); // null
+var_dump(Validate::asIp(null)); // null
 
-echo Validate::ip(null, '255.255.255.0'); // '255.255.255.0'
+echo Validate::asIp(null, '255.255.255.0'); // '255.255.255.0'
 ```
 
 ### - URL:
@@ -459,15 +459,15 @@ echo Validate::ip(null, '255.255.255.0'); // '255.255.255.0'
 #### - Cuando una URL es pasada:
 
 ```php
-echo Validate::url('https://josantonius.com'); // 'https://josantonius.com'
+echo Validate::asUrl('https://josantonius.com'); // 'https://josantonius.com'
 ```
 
 #### - Cuando no se pasa una URL correcta:
 
 ```php
-var_dump(Validate::url(null)); // null
+var_dump(Validate::asUrl(null)); // null
 
-echo Validate::url(null, 'https://josantonius.com'); // 'https://josantonius.com'
+echo Validate::asUrl(null, 'https://josantonius.com'); // 'https://josantonius.com'
 ```
 
 ### - Email:
@@ -475,15 +475,15 @@ echo Validate::url(null, 'https://josantonius.com'); // 'https://josantonius.com
 #### - Cuando un email es pasado:
 
 ```php
-echo Validate::email('hello@josantonius.com'); // 'hello@josantonius.com'
+echo Validate::asEmail('hello@josantonius.com'); // 'hello@josantonius.com'
 ```
 
 #### - Cuando no se pasa un email correcto:
 
 ```php
-var_dump(Validate::email(null)); // null
+var_dump(Validate::asEmail(null)); // null
 
-echo Validate::email(null, 'hello@josantonius.com'); // 'hello@josantonius.com'
+echo Validate::asEmail(null, 'hello@josantonius.com'); // 'hello@josantonius.com'
 ```
 
 ## Tests 
