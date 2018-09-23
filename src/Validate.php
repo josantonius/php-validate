@@ -13,7 +13,7 @@ declare(strict_types=1);
 namespace Josantonius\Validate;
 
 /**
- * Data type handler.
+ * Validation or conversion of data types.
  */
 class Validate
 {
