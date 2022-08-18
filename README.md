@@ -22,7 +22,7 @@ PHP simple library for managing of data types.
 
 ## Requirements
 
-This library is supported by **PHP versions 7.0** or higher and is compatible with **HHVM versions 3.0** or higher.
+This library is supported by PHP 7.4 version.
 
 ## Installation
 

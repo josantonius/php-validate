@@ -22,7 +22,7 @@ Biblioteca PHP para manejo de tipos de datos.
 
 ## Requisitos
 
-Esta clase es soportada por versiones de **PHP 7.0** o superiores y es compatible con versiones de **HHVM 3.0** o superiores.
+Esta clase es soportada por la versión 7.4 de PHP.
 
 ## Instalación
 

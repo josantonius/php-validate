@@ -1,6 +1,6 @@
 {
-    "name":        "josantonius/validate",
-    "type":        "library",
+    "name": "josantonius/validate",
+    "type": "library",
     "description": "PHP simple library for managing of data types.",
     "keywords": [
         "Data type",
@@ -18,15 +18,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name":     "Josantonius",
-            "email":    "hello@josantonius.com",
+            "name": "Josantonius",
+            "email": "hello@josantonius.com",
             "homepage": "https://josantonius.com",
-            "role":     "Developer"
+            "role": "Developer"
         }
     ],
     "support": {
         "issues": "https://github.com/josantonius/php-validate/issues",
-        "forum":  "http://stackoverflow.com/tags/josantonius/php-validate",
+        "forum": "http://stackoverflow.com/tags/josantonius/php-validate",
         "source": "https://github.com/josantonius/php-validate"
     },
     "config": {
@@ -34,7 +34,7 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": "^7.0"
+        "php": "^7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7 || ^6.0",
