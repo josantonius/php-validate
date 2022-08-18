@@ -1,8 +1,9 @@
 # PHP Validate library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/validate/v/stable)](https://packagist.org/packages/josantonius/validate) [![Latest Unstable Version](https://poser.pugx.org/josantonius/validate/v/unstable)](https://packagist.org/packages/josantonius/validate) [![License](https://poser.pugx.org/josantonius/validate/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/183fd8c88a7344e79ad3891f35ebc3fe)](https://www.codacy.com/app/Josantonius/php-validate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/php-validate&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/validate/downloads)](https://packagist.org/packages/josantonius/validate) [![Travis](https://travis-ci.org/Josantonius/php-validate.svg)](https://travis-ci.org/Josantonius/php-validate) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![codecov](https://codecov.io/gh/Josantonius/php-validate/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/php-validate)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/validate/v/stable)](https://packagist.org/packages/josantonius/validate)
+[![License](https://poser.pugx.org/josantonius/validate/license)](LICENSE)
 
-[English version](README.md) 
+[English version](README.md)
 
 Biblioteca PHP para manejo de tipos de datos.
 
@@ -14,11 +15,8 @@ Biblioteca PHP para manejo de tipos de datos.
 - [Cómo empezar](#cómo-empezar)
 - [Uso](#uso)
 - [Tests](#tests)
-- [Tareas pendientes](#-tareas-pendientes)
-- [Contribuir](#contribuir)
-- [Repositorio](#repositorio)
+- [Patrocinar](#patrocinar)
 - [Licencia](#licencia)
-- [Copyright](#copyright)
 
 ---
 
@@ -26,33 +24,33 @@ Biblioteca PHP para manejo de tipos de datos.
 
 Esta clase es soportada por versiones de **PHP 7.0** o superiores y es compatible con versiones de **HHVM 3.0** o superiores.
 
-## Instalación 
+## Instalación
 
 La mejor forma de instalar esta extensión es a través de [Composer](http://getcomposer.org/download/).
 
 Para instalar **PHP Validate library**, simplemente escribe:
 
-    $ composer require Josantonius/Validate
+    composer require Josantonius/Validate
 
 El comando anterior sólo instalará los archivos necesarios, si prefieres **descargar todo el código fuente** puedes utilizar:
 
-    $ composer require Josantonius/Validate --prefer-source
+    composer require Josantonius/Validate --prefer-source
 
 También puedes **clonar el repositorio** completo con Git:
 
-  $ git clone https://github.com/Josantonius/PHP-Validate.git
+  $ git clone <https://github.com/Josantonius/PHP-Validate.git>
 
 O **instalarlo manualmente**:
 
 [Descargar Validate.php](https://raw.githubusercontent.com/Josantonius/PHP-Validate/master/src/Validate.php):
 
-    $ wget https://raw.githubusercontent.com/Josantonius/PHP-Validate/master/src/Validate.php
+    wget https://raw.githubusercontent.com/Josantonius/PHP-Validate/master/src/Validate.php
 
 ## Métodos disponibles
 
 Métodos disponibles en esta biblioteca:
 
-### - Devolución de parámetros como array:
+### - Devolución de parámetros como array
 
 ```php
 Validate::asArray($data, $default);
@@ -65,7 +63,7 @@ Validate::asArray($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como object:
+### - Devolución de parámetros como object
 
 ```php
 Validate::asObject($data, $default);
@@ -78,7 +76,7 @@ Validate::asObject($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como JSON:
+### - Devolución de parámetros como JSON
 
 ```php
 Validate::asJson($data, $default);
@@ -91,7 +89,7 @@ Validate::asJson($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como string:
+### - Devolución de parámetros como string
 
 ```php
 Validate::asString($data, $default);
@@ -104,7 +102,7 @@ Validate::asString($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como integer:
+### - Devolución de parámetros como integer
 
 ```php
 Validate::asInteger($data, $default);
@@ -117,7 +115,7 @@ Validate::asInteger($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como float:
+### - Devolución de parámetros como float
 
 ```php
 Validate::asFloat($data, $default);
@@ -130,7 +128,7 @@ Validate::asFloat($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como boolean:
+### - Devolución de parámetros como boolean
 
 ```php
 Validate::asBoolean($data, $default);
@@ -143,7 +141,7 @@ Validate::asBoolean($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como IP:
+### - Devolución de parámetros como IP
 
 ```php
 Validate::asIp($data, $default);
@@ -156,7 +154,7 @@ Validate::asIp($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como URL:
+### - Devolución de parámetros como URL
 
 ```php
 Validate::asUrl($data, $default);
@@ -169,7 +167,7 @@ Validate::asUrl($data, $default);
 
 **# Return** (mixed|null) → valor, valor de retorno nulo o personalizado
 
-### - Devolución de parámetros como URL:
+### - Devolución de parámetros como URL
 
 ```php
 Validate::asEmail($data, $default);
@@ -204,21 +202,21 @@ use Josantonius\Validate\Validate;
 
 Ejemplo de uso para esta biblioteca:
 
-### - ARRAY:
+### - ARRAY
 
-#### - Cuando un array es pasado:
+#### - Cuando un array es pasado
 
 ```php
 var_dump(Validate::asArray(['foo', 'bar'])); // ['foo', 'bar']
 ```
 
-#### - Cuando un array JSON es pasado:
+#### - Cuando un array JSON es pasado
 
 ```php
 var_dump(Validate::asArray('["foo", "bar"]')); // ['foo', 'bar']
 ```
 
-#### - Cuando un objeto es pasado:
+#### - Cuando un objeto es pasado
 
 ```php
 $data = new \StdClass;
@@ -228,13 +226,13 @@ $data->foo = 'bar';
 var_dump(Validate::asArray($data)); // ['foo' => 'bar']
 ```
 
-#### - Cuando un objeto JSON es pasado:
+#### - Cuando un objeto JSON es pasado
 
 ```php
 var_dump(Validate::asArray('{"foo": "bar"}')); // ['foo' => 'bar']
 ```
 
-#### - Cuando no se pasa un array correcto:
+#### - Cuando no se pasa un array correcto
 
 ```php
 var_dump(Validate::asArray(false)); // null
@@ -242,9 +240,9 @@ var_dump(Validate::asArray(false)); // null
 var_dump(Validate::asArray(false, ['foo', 'bar'])); // ['foo', 'bar']
 ```
 
-### - OBJECT:
+### - OBJECT
 
-#### - Cuando un objeto es pasado:
+#### - Cuando un objeto es pasado
 
 ```php
 $data = new \StdClass;
@@ -256,7 +254,7 @@ $object = Validate::asObject($data);
 echo $object->foo; // 'bar'
 ```
 
-#### - Cuando un objeto JSON es pasado:
+#### - Cuando un objeto JSON es pasado
 
 ```php
 $object = Validate::asObject('{"foo": "bar"}');
@@ -264,7 +262,7 @@ $object = Validate::asObject('{"foo": "bar"}');
 echo $object->foo; // 'bar'
 ```
 
-#### - Cuando un array es pasado:
+#### - Cuando un array es pasado
 
 ```php
 $object = Validate::asObject(['foo' => 'bar']));
@@ -272,7 +270,7 @@ $object = Validate::asObject(['foo' => 'bar']));
 echo $object->foo; // 'bar'
 ```
 
-#### - Cuando no se pasa un objeto correcto:
+#### - Cuando no se pasa un objeto correcto
 
 ```php
 var_dump(Validate::asObject(false)); // null
@@ -282,21 +280,21 @@ $object = Validate::asObject(false, ['foo' => 'bar']);
 echo $object->foo; // 'bar'
 ```
 
-### - JSON:
+### - JSON
 
-#### - Cuando un objeto JSON es pasado:
+#### - Cuando un objeto JSON es pasado
 
 ```php
 echo Validate::asJson('{"foo": "bar"}'); // '{"foo": "bar"}'
 ```
 
-#### - Cuando un array es pasado:
+#### - Cuando un array es pasado
 
 ```php
 echo Validate::asJson(['foo' => 'bar']); // '{"foo":"bar"}'
 ```
 
-#### - Cuando un objeto es pasado:
+#### - Cuando un objeto es pasado
 
 ```php
 $data = new \StdClass;
@@ -306,7 +304,7 @@ $data->foo = 'bar';
 echo Validate::asJson($data); // '{"foo":"bar"}'
 ```
 
-#### - Cuando no se pasa un JSON correcto:
+#### - Cuando no se pasa un JSON correcto
 
 ```php
 var_dump(Validate::asJson(false)); // null
@@ -314,21 +312,21 @@ var_dump(Validate::asJson(false)); // null
 echo Validate::asJson(false, '["foo", "bar"]'); // '["foo", "bar"]'
 ```
 
-### - STRING:
+### - STRING
 
-#### - Cuando un string es pasado:
+#### - Cuando un string es pasado
 
 ```php
 echo Validate::asString('foo'); // 'foo'
 ```
 
-#### - When an integer is passed:
+#### - When an integer is passed
 
 ```php
 echo Validate::asString(221104); // '221104'
 ```
 
-#### - Cuando no se pasa un string correcto:
+#### - Cuando no se pasa un string correcto
 
 ```php
 var_dump(Validate::asString(false)); // null
@@ -336,21 +334,21 @@ var_dump(Validate::asString(false)); // null
 echo Validate::asString(false, 'foo'); // 'foo'
 ```
 
-### - INTEGER:
+### - INTEGER
 
-#### - When an integer is passed:
+#### - When an integer is passed
 
 ```php
 echo Validate::asInteger(8); // 8
 ```
 
-#### - Cuando un string es pasado:
+#### - Cuando un string es pasado
 
 ```php
 echo Validate::asInteger('8'); // 8
 ```
 
-#### - Cuando no se pasa un integer correcto:
+#### - Cuando no se pasa un integer correcto
 
 ```php
 var_dump(Validate::asInteger(false)); // null
@@ -358,21 +356,21 @@ var_dump(Validate::asInteger(false)); // null
 echo Validate::asInteger(false, 8); // 8
 ```
 
-### - FLOAT:
+### - FLOAT
 
-#### - When an float is passed:
+#### - When an float is passed
 
 ```php
 echo Validate::asFloat(8.8); // 8.8
 ```
 
-#### - Cuando un string es pasado:
+#### - Cuando un string es pasado
 
 ```php
 echo Validate::asFloat('8.8'); // 8.8
 ```
 
-#### - Cuando no se pasa un float correcto:
+#### - Cuando no se pasa un float correcto
 
 ```php
 var_dump(Validate::asFloat(false)); // null
@@ -380,57 +378,57 @@ var_dump(Validate::asFloat(false)); // null
 echo Validate::asFloat(false, 8.8); // 8.8
 ```
 
-### - BOOLEAN:
+### - BOOLEAN
 
-#### - Cuando un booleano true es pasado:
+#### - Cuando un booleano true es pasado
 
 ```php
 var_dump(Validate::asBoolean(true)); // true
 ```
 
-#### - Cuando un string true es pasado:
+#### - Cuando un string true es pasado
 
 ```php
 var_dump(Validate::asBoolean('true')); // true
 ```
 
-#### - Cuando un integer 1 es pasado:
+#### - Cuando un integer 1 es pasado
 
 ```php
 var_dump(Validate::asBoolean(1)); // true
 ```
 
-#### - Cuando un string 1 es pasado:
+#### - Cuando un string 1 es pasado
 
 ```php
 var_dump(Validate::asBoolean('1')); // true
 ```
 
-#### - Cuando un booleano false es pasado:
+#### - Cuando un booleano false es pasado
 
 ```php
 var_dump(Validate::asBoolean(false)); // false
 ```
 
-#### - Cuando un string false es pasado:
+#### - Cuando un string false es pasado
 
 ```php
 var_dump(Validate::asBoolean('false')); // false
 ```
 
-#### Cuando un integer 0 es pasado:
+#### Cuando un integer 0 es pasado
 
 ```php
 var_dump(Validate::asBoolean(0)); // false
 ```
 
-#### - Cuando un string 0 es pasado:
+#### - Cuando un string 0 es pasado
 
 ```php
 var_dump(Validate::asBoolean('0')); // false
 ```
 
-#### - Cuando no se pasa un booleano correcto:
+#### - Cuando no se pasa un booleano correcto
 
 ```php
 var_dump(Validate::asBoolean(null)); // null
@@ -438,15 +436,15 @@ var_dump(Validate::asBoolean(null)); // null
 echo Validate::asBoolean(null, true); // true
 ```
 
-### - IP:
+### - IP
 
-#### - Cuando una IP es pasada:
+#### - Cuando una IP es pasada
 
 ```php
 echo Validate::asIp('255.255.255.0'); // '255.255.255.0'
 ```
 
-#### - Cuando no se pasa una IP correcta:
+#### - Cuando no se pasa una IP correcta
 
 ```php
 var_dump(Validate::asIp(null)); // null
@@ -454,15 +452,15 @@ var_dump(Validate::asIp(null)); // null
 echo Validate::asIp(null, '255.255.255.0'); // '255.255.255.0'
 ```
 
-### - URL:
+### - URL
 
-#### - Cuando una URL es pasada:
+#### - Cuando una URL es pasada
 
 ```php
 echo Validate::asUrl('https://josantonius.com'); // 'https://josantonius.com'
 ```
 
-#### - Cuando no se pasa una URL correcta:
+#### - Cuando no se pasa una URL correcta
 
 ```php
 var_dump(Validate::asUrl(null)); // null
@@ -470,15 +468,15 @@ var_dump(Validate::asUrl(null)); // null
 echo Validate::asUrl(null, 'https://josantonius.com'); // 'https://josantonius.com'
 ```
 
-### - Email:
+### - Email
 
-#### - Cuando un email es pasado:
+#### - Cuando un email es pasado
 
 ```php
 echo Validate::asEmail('hello@josantonius.com'); // 'hello@josantonius.com'
 ```
 
-#### - Cuando no se pasa un email correcto:
+#### - Cuando no se pasa un email correcto
 
 ```php
 var_dump(Validate::asEmail(null)); // null
@@ -486,31 +484,31 @@ var_dump(Validate::asEmail(null)); // null
 echo Validate::asEmail(null, 'hello@josantonius.com'); // 'hello@josantonius.com'
 ```
 
-## Tests 
+## Tests
 
 Para ejecutar las [pruebas](tests) necesitarás [Composer](http://getcomposer.org/download/) y seguir los siguientes pasos:
 
-    $ git clone https://github.com/Josantonius/PHP-Validate.git
+    git clone https://github.com/Josantonius/PHP-Validate.git
     
-    $ cd PHP-Validate
+    cd PHP-Validate
 
-    $ composer install
+    composer install
 
 Ejecutar pruebas unitarias con [PHPUnit](https://phpunit.de/):
 
-    $ composer phpunit
+    composer phpunit
 
 Ejecutar pruebas de estándares de código [PSR2](http://www.php-fig.org/psr/psr-2/) con [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
-    $ composer phpcs
+    composer phpcs
 
 Ejecutar pruebas con [PHP Mess Detector](https://phpmd.org/) para detectar inconsistencias en el estilo de codificación:
 
-    $ composer phpmd
+    composer phpmd
 
 Ejecutar todas las pruebas anteriores:
 
-    $ composer tests
+    composer tests
 
 ## ☑ Tareas pendientes
 
@@ -526,12 +524,12 @@ Si deseas colaborar, puedes echar un vistazo a la lista de
 
 **Pull requests**
 
-* [Fork and clone](https://help.github.com/articles/fork-a-repo).
-* Ejecuta el comando `composer install` para instalar dependencias.
+- [Fork and clone](https://help.github.com/articles/fork-a-repo).
+- Ejecuta el comando `composer install` para instalar dependencias.
   Esto también instalará las [dependencias de desarrollo](https://getcomposer.org/doc/03-cli.md#install).
-* Ejecuta el comando `composer fix` para estandarizar el código.
-* Ejecuta las [pruebas](#tests).
-* Crea una nueva rama (**branch**), **commit**, **push** y envíame un
+- Ejecuta el comando `composer fix` para estandarizar el código.
+- Ejecuta las [pruebas](#tests).
+- Crea una nueva rama (**branch**), **commit**, **push** y envíame un
   [pull request](https://help.github.com/articles/using-pull-requests).
 
 ## Repositorio
@@ -549,3 +547,15 @@ Este proyecto está licenciado bajo **licencia MIT**. Consulta el archivo [LICEN
 Si te ha resultado útil, házmelo saber :wink:
 
 Puedes contactarme en [Twitter](https://twitter.com/Josantonius) o a través de mi [correo electrónico](mailto:hello@josantonius.com).
+
+## Patrocinar
+
+Si este proyecto te ayuda a reducir el tiempo de desarrollo,
+[puedes patrocinarme](https://github.com/josantonius/lang/es-ES/README.md#patrocinar)
+para apoyar mi trabajo :blush:
+
+## Licencia
+
+Este repositorio tiene una licencia [MIT License](LICENSE).
+
+Copyright © XXXX, [Josantonius](https://github.com/josantonius/lang/es-ES/README.md#contacto)

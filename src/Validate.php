@@ -10,6 +10,7 @@ declare(strict_types=1);
  * @link      https://github.com/Josantonius/PHP-Validate
  * @since     1.0.0
  */
+
 namespace Josantonius\Validate;
 
 /**
@@ -129,7 +130,7 @@ class Validate
     {
         $boolean = filter_var($data ?? [], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
 
-        return ! is_null($boolean) ? $boolean : $default;
+        return !is_null($boolean) ? $boolean : $default;
     }
 
     /**
@@ -175,5 +176,121 @@ class Validate
         $isValid = filter_var($data ?? '', FILTER_VALIDATE_EMAIL);
 
         return $isValid ? $data : $default;
+    }
+
+    /**
+     * Parameter return as date time.
+     *
+     * @since 1.0.1
+     *
+     * @param mixed $data    → data to convert
+     * @param mixed $default → default value in error case
+     *
+     * @return mixed → value, null or customized return value
+     */
+    public static function asDatetime($data, $default = null)
+    {
+        try {
+            $date = new \DateTime($data);
+        } catch (\Exception $e) {
+            return $default;
+        }
+
+        $formattedDate = $date->format('Y-m-d H:i:s');
+
+        $date = \DateTime::createFromFormat('Y-m-d H:i:s', $formattedDate);
+
+        $errors = \DateTime::getLastErrors();
+
+        $isValid = ($errors['warning_count'] + $errors['error_count']) === 0;
+
+        return $isValid ? $date : $default;
+    }
+
+    /**
+     * Validate min length.
+     *
+     * @since 1.0.1
+     */
+    public static function hasMinLength($data, int $length): bool
+    {
+        return strlen((string) $data) >= $length;
+    }
+
+    /**
+     * Validate length.
+     *
+     * @since 1.0.1
+     */
+    public static function hasSameLength($data, int $length): bool
+    {
+        return strlen((string) $data) === $length;
+    }
+
+    /**
+     * Validate max length.
+     *
+     * @since 1.0.1
+     */
+    public static function exceedsMaxLength($data, int $length): bool
+    {
+        return strlen((string) $data) > $length;
+    }
+
+    /**
+     * Validate if is greater than.
+     *
+     * @since 1.0.1
+     */
+    public static function isGreaterThan($firstValue, $secondValue): bool
+    {
+        return $firstValue > $secondValue;
+    }
+
+    /**
+     * Validate if is less than.
+     *
+     * @since 1.0.1
+     */
+    public static function isLessThan($firstValue, $secondValue): bool
+    {
+        return $firstValue < $secondValue;
+    }
+
+    /**
+     * Validate if is equal than.
+     *
+     * @since 1.0.1
+     */
+    public static function isEqualThan($firstValue, $secondValue): bool
+    {
+        return $firstValue === $secondValue;
+    }
+
+    /**
+     * Validate if string is composed by.
+     *
+     * @since 1.0.1
+     */
+    public static function stringIsComposedBy(string $data, array $items): bool
+    {
+        $options = [
+            'empty' => '^$',
+            'letters' => 'A-z',
+            'accents' => 'À-ÖØ-öø-ÿ',
+            'numbers' => '0-9',
+            'spaces' => '\p{Zs}',
+            'symbols' => '\W'
+        ];
+
+        $regExp = '';
+
+        foreach ($items as $item) {
+            $regExp .= ($item !== 'empty') ? ($options[$item] ?? $item) : '';
+        }
+
+        $empty = in_array('empty', $items) ? $options['empty'] . '|' : '';
+
+        return $regExp && preg_match("/$empty^[$regExp]+$/mu", $data);
     }
 }
