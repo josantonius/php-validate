@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.0.0 - 2022-08-18
+## 1.0.1 - 2022-08-18
 
 The repository was archived.
 
